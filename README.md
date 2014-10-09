@@ -1,1 +1,11 @@
-## Docker Mysql db Dockerfile ##
+## Base Docker Image ##
+
+[dockerfile/ubuntu][1]
+
+### Installation ###
+
+ 1. Install Docker.
+ 2. Pull the repo.
+ 3. Run with `sudo docker run -t -i uddhab/mysql-db:v0.1 /bin/bash`
+
+  [1]: http://dockerfile.github.io/#/ubuntu
