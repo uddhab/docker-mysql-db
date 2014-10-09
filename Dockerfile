@@ -1,4 +1,11 @@
 # Test docker
-FROM ubuntu
+FROM centos:centos6
+
 MAINTAINER uddhab
-RUN apt-get update && apt-get install -y git
+
+VOLUME /var/lib/mysql
+
+RUN yum -y install mysql-server
+RUN touch /etc/sysconfig/network
+
+EXPOSE 3306
