@@ -7,3 +7,5 @@ RUN apt-get install -y mysql-server php5-mysql
 
 EXPOSE 3306
 
+CMD ["/usr/bin/mysqld_safe"]
+
