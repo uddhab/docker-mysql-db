@@ -1,11 +1,14 @@
-# Test docker
-FROM centos:centos6
+FROM ubuntu
 
-MAINTAINER uddhab
+RUN dpkg-divert --local --rename --add /sbin/initctl
+RUN ln -s /bin/true /sbin/initctl
 
-VOLUME /var/lib/mysql
+RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
+RUN apt-get update
+RUN apt-get upgrade -y
 
-RUN yum -y install mysql-server
-RUN touch /etc/sysconfig/network
+RUN apt-get -y install mysql-server
 
 EXPOSE 3306
+
+CMD ["/usr/bin/mysqld_safe"]
