@@ -4,7 +4,7 @@ RUN dpkg-divert --local --rename --add /sbin/initctl
 RUN ln -nfs /bin/true /sbin/initctl
 
 RUN apt-get update
-RUN apt-get upgrade -y
+#RUN apt-get upgrade -y
 
 RUN apt-get install -y mysql-client mysql-server
 
