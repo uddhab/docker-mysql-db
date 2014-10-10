@@ -8,8 +8,7 @@ if [ ! -f /var/lib/mysql/ibdata1 ]; then
     /usr/bin/mysqld_safe &
     sleep 10s
 
-    echo "CREATE USER 'admin'@'%' IDENTIFIED BY 'password';" | mysql
-    echo "GRANT ALL PRIVILEGES ON *.* TO admin@'%' WITH GRANT OPTION; FLUSH PRIVILEGES" | mysql
+    echo "GRANT ALL ON *.* TO admin@'%' IDENTIFIED BY 'password' WITH GRANT OPTION; FLUSH PRIVILEGES" | mysql
 
     killall mysqld
     sleep 10s
